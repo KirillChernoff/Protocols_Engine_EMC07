@@ -1,0 +1,79 @@
+﻿<Window x:Class="EMC07.Win_ViewProtocol"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:EMC07"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        WindowStyle="None"
+        ShowInTaskbar="False"
+        FontSize="{DynamicResource Page_FontSize_Medium}"
+        ResizeMode="NoResize"
+        Topmost="True"
+        Loaded="Win_ViewProtocol_OnLoaded"
+        Unloaded="Win_ViewProtocol_OnUnloaded">
+
+    <Window.Resources>
+        <!--<local:BoolToVisibilityConverter x:Key="boolVisibilityConvertor"/>-->
+
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        
+        <local:PrintBtnTextConverter x:Key="BtnTextConverter"/>
+        <sys:Double x:Key="ButtonWidth">260</sys:Double>
+    </Window.Resources>
+
+    <Border BorderThickness="1.0" BorderBrush="LightGray">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Background="{DynamicResource Page_Backgroud}" Margin="0">
+
+                <Grid Grid.Row="0" Background="{DynamicResource Page_Backgroud}" Margin="0" Visibility="{Binding ViewProtocolVisibility}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Row="0" x:Name="WebBrowserGrid"/>
+
+                    <ScrollBar Grid.Row="0"  Grid.Column="1" Name="webScrollBar" Scroll="webScrollBar_Scroll"/>
+
+                    <!--Версия с кнопкой сохранить пролокол-->
+                    <Grid x:Name="GridButton" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Border Grid.Column="0" BorderBrush="{StaticResource BottomButton_Border}" BorderThickness="0,1,1,0">
+                            <Button Style="{StaticResource BottomButton}"  Height="{StaticResource BottomButton_Height}" Tag="PrintProtocol" Click="Print_Click" Content="{Binding Converter={StaticResource BtnTextConverter}}"/>
+                        </Border>
+
+                        <Border Grid.Column="1" BorderBrush="{StaticResource BottomButton_Border}" BorderThickness="0,1,1,0" Visibility="{Binding bShowSaveBtn, Converter={StaticResource BoolToVisibilityConverter}}">
+                            <Button Style="{StaticResource BottomButton}"  Width="{StaticResource ButtonWidth}" Height="{StaticResource BottomButton_Height}"  Tag="SaveProtocol" Click="BtnSave_Click">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Сохранить" HorizontalAlignment="Center"/>
+                                    <TextBlock Text="протокол" HorizontalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+
+                        <Border Grid.Column="2" BorderBrush="{StaticResource BottomButton_Border}" BorderThickness="0,1,0,0">
+                            <Button Style="{StaticResource BottomButton}"  Width="{StaticResource ButtonWidth}" Height="{StaticResource BottomButton_Height}" Click="BtnExitViewProtocol_Click">
+                                <TextBlock Text="Выход"/>
+                            </Button>
+                        </Border>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
