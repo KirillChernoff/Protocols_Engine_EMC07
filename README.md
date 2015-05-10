@@ -5,7 +5,7 @@
 Помимо этого, для печати на принтер используется [GhostScript](http://ghostscript.com/download/).
 
 Пример отображения списка сохраненных протоколов поверки расходомеров.
-![list window](https://www.dropbox.com/s/yy2hsmg4n7ux5th/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-05-10%2021.12.33.PNG?dl=0)
+![list window](https://www.dropbox.com/s/11xhgz39ewoxoip/screen_list.PNG?dl=0)
 
 Пример отображения протокола в окне просмотра.
-![protocol window](https://www.dropbox.com/s/ifxdvmf7zdpdigk/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202015-05-10%2021.11.52.png?dl=0)
+![protocol window](https://www.dropbox.com/s/j84vvlhf04ge65r/screen_prot.png?dl=0)
