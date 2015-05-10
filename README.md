@@ -5,7 +5,7 @@
 Помимо этого, для печати на принтер используется [GhostScript](http://ghostscript.com/download/).
 
 Пример отображения списка сохраненных протоколов поверки расходомеров.
-![list window](https://www.dropbox.com/s/11xhgz39ewoxoip/screen_list.PNG?dl=0)
+![list window](https://github.com/KirillChernoff/Protocols_Engine_EMC07/blob/master/screens/screen_list.PNG?raw=true)
 
 Пример отображения протокола в окне просмотра.
-![protocol window](https://www.dropbox.com/s/j84vvlhf04ge65r/screen_prot.png?dl=0)
+![protocol window](https://github.com/KirillChernoff/Protocols_Engine_EMC07/blob/master/screens/screen_prot.png?raw=true)
